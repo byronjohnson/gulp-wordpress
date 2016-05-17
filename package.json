@@ -1,0 +1,32 @@
+{
+  "name": "sw-gulp-package",
+  "version": "1.0.0",
+  "description": "Gulp setup for Southern Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Byron Johnson",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "*",
+    "browser-sync": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cache": "*",
+    "gulp-concat": "*",
+    "gulp-minify-css": "*",
+    "gulp-imagemin": "*",
+    "gulp-jshint": "*",
+    "gulp-livereload": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "through2-concurrent": "*",
+    "vinyl-source-stream": "*"
+  }
+}

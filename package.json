@@ -25,11 +25,25 @@
     "gulp-livereload": "*",
     "gulp-notify": "*",
     "gulp-plumber": "*",
+    "gulp-postcss": "*",
     "gulp-rename": "*",
     "gulp-ruby-sass": "*",
     "gulp-uglify": "*",
     "gulp-util": "*",
+    "gulp-webpack": "*",
     "through2-concurrent": "*",
     "vinyl-source-stream": "*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "cssnext": "^1.8.4",
+    "gulp-jshint": "^2.0.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "jshint": "^2.9.4",
+    "precss": "^1.4.0",
+    "sass-loader": "^4.0.2",
+    "susy": "^2.2.12",
+    "webpack-dev-server": "^1.9.0"
   }
 }

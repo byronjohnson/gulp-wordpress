@@ -6,7 +6,11 @@
 // Load plugins
 var gulp = require('../../node_modules/gulp'),
     sass = require('../../node_modules/gulp-ruby-sass'),
-    autoprefixer = require('../../node_modules/gulp-autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps'),
+    postcss = require('../../node_modules/gulp-postcss'),
+    autoprefixer = require('../../node_modules/autoprefixer'),
+    cssnext = require('../../node_modules/cssnext'),
+    precss = require('../../node_modules/precss'),
     minifycss = require('../../node_modules/gulp-minify-css'),
     jshint = require('../../node_modules/gulp-jshint'),
     uglify = require('../../node_modules/gulp-uglify'),
@@ -21,12 +25,21 @@ var gulp = require('../../node_modules/gulp'),
  
 // Styles
 gulp.task('styles', function() {
+
+  var processors = [
+    autoprefixer({flexbox: true, browsers: ['last 2 versions' ,'iOS 6', 'iOS 7']}),
+    cssnext,
+    precss
+  ];
+
   return sass('sass/style.scss', { style: 'compact' })
     .on('error', function (err) {
       console.error('Error', err.message);
       notify({ message: 'errors!' })
     })
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(postcss(processors))
     .pipe(gulp.dest(''))
     .pipe(minifycss())
     .pipe(gulp.dest('dist/styles'))

@@ -1,7 +1,7 @@
 {
   "name": "sw-gulp-package",
   "version": "1.0.0",
-  "description": "Gulp setup for Southern Web",
+  "description": "Gulp setup",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,13 +21,12 @@
     "gulp-concat": "*",
     "gulp-minify-css": "*",
     "gulp-imagemin": "*",
-    "gulp-jshint": "*",
     "gulp-livereload": "*",
     "gulp-notify": "*",
     "gulp-plumber": "*",
     "gulp-postcss": "*",
     "gulp-rename": "*",
-    "gulp-ruby-sass": "*",
+    "gulp-sass": "*",
     "gulp-uglify": "*",
     "gulp-util": "*",
     "gulp-webpack": "*",
@@ -35,15 +34,15 @@
     "vinyl-source-stream": "*"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.3",
-    "cssnext": "^1.8.4",
-    "gulp-jshint": "^2.0.4",
-    "gulp-sass": "^2.3.2",
+    "autoprefixer": "^8.6.0",
+    "gulp-jshint": "^2.1.0",
     "gulp-sourcemaps": "^2.2.0",
-    "jshint": "^2.9.4",
-    "precss": "^1.4.0",
-    "sass-loader": "^4.0.2",
-    "susy": "^2.2.12",
-    "webpack-dev-server": "^1.9.0"
+    "jshint": "^2.10.1",
+    "postcss-cssnext": "^3.0.0",
+    "precss": "^3.1.2",
+    "sass-loader": "^7.0.3",
+    "susy": "^3.0.5",
+    "webpack": "^4.29.3",
+    "webpack-dev-server": "^3.1.4"
   }
 }

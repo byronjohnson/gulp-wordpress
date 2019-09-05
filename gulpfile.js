@@ -1,6 +1,7 @@
 // Load plugins
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    babel = require('gulp-babel');
     sourcemaps = require('gulp-sourcemaps'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
@@ -18,6 +19,7 @@ var gulp = require('gulp'),
     del = require('del'),
     browserSync = require('browser-sync'),
     livereload = require('gulp-livereload');
+    
 
 // Styles
 gulp.task('styles', function() {
@@ -27,7 +29,7 @@ gulp.task('styles', function() {
         precss
     ];
 
-    return gulp.src('sass/**/*.scss')
+    return gulp.src('scss/**/*.scss')
         .pipe(sourcemaps.init())    
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(postcss(processors))
@@ -42,10 +44,13 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', gulp.series(function() {
-    return gulp.src('js/**/*.js')
+    return gulp.src(['js/**/*.js' ])
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
         .pipe(concat('main.js'))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(gulp.dest('dist/scripts'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
@@ -80,7 +85,7 @@ gulp.task('default', gulp.series('clean', gulp.parallel('styles', 'scripts', 'im
 gulp.task('watch', function(done) {
 
     // Watch .scss files
-    gulp.watch('sass/**/*.scss', gulp.series('styles'));
+    gulp.watch('scss/**/*.scss', gulp.series('styles'));
 
     // Watch .js files
     gulp.watch('js/**/*.js', gulp.series('scripts'));

@@ -34,14 +34,19 @@
     "vinyl-source-stream": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
     "autoprefixer": "^8.6.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "gulp-babel": "^8.0.0",
     "gulp-jshint": "^2.1.0",
     "gulp-sourcemaps": "^2.2.0",
     "jshint": "^2.10.1",
     "postcss-cssnext": "^3.0.0",
     "precss": "^3.1.2",
     "sass-loader": "^7.0.3",
-    "susy": "^3.0.5",
     "webpack": "^4.29.3",
     "webpack-dev-server": "^3.1.4"
   }
